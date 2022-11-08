@@ -1,0 +1,14 @@
+<div class="tab_list divmargin tcpnewpost">
+	<h3 class="tit">
+		<strong class="on" style="border-left:none;border-right:solid 1px #CCC;">最新文章</strong>
+	</h3>
+		
+	<ul>
+        <foreach name='new' item='v'>	
+		<li class="listnumli ligreen"><a target="_blank" href="{:U('/' . $v['id'])}" rel="bookmark" title="{$v.title}" >{$v.title}</a></li>
+	    </foreach>	
+		</ul>
+</div>
+
+
+

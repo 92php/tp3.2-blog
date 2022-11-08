@@ -1,0 +1,40 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>92php.net</title>
+<link rel="stylesheet" href="/Public/Css/login.css" type="text/css" />  
+<script type="text/javascript" src="/Public/Js/jquery-1.7.2.min.js"></script>
+<script type="text/javascript">
+	var verifyURL='{:U(GROUP_NAME."/Login/verify",'','')}';
+</script>
+<script type="text/javascript" src="/Public/Js/login.js"></script>
+</head>
+<body>
+	
+<div id="wrap">
+    <div class="logo"><IMG src="/Public/Images/logo.png" width=200 height=80></div>
+	<div class="login">
+		<form action="{:U(GROUP_NAME.'/Login/login')}" method="post"  id="login">
+			<div class="username">
+			     <li class="uli">用户名:</li>
+			     <li class="ulp"><input name="username" id="username" type="username" style="width: 180px;" /></li>
+			</div>
+			<div class="password">
+					<li class="uli">密&nbsp;&nbsp;码:</li>
+					<li class="ulp"><input type="password" name="password" id="password" style="width: 180px" /></li>
+			</div>
+			<div class="verify">
+						<li class="uli">验证码:</li>
+						<li class="nmu"><input name="code" type="code" class="lyform"   style="width: 80px" maxlength="5"/></li>
+						<li class="liv"><a href="javascript:void(change_code(this));"><img src="{:U(GROUP_NAME.'/Login/verify')}" id="code" border="0" alt="看不清楚请点击刷新验证码" style="cursor : pointer;width:60px;height:20px;" /></a></li>
+			</div>
+		    <div class="submit"><input type="submit"   id="dosubmit" class="submit" value="登录"  /></div>
+		</form>
+	</div>
+    <div class="bottom"></div>
+    <div class="desc"><a href="http://www.92php.net">92php.net网站管理系统</a></div>
+</div>
+
+</body>
+</html>

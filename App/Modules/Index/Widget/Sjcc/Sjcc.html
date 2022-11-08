@@ -1,0 +1,10 @@
+<ul class="content_list clearfix clean">
+		
+			 <foreach name='Sjcc' item='va'>	
+				<li>
+					<span class="fr">{$va.time|date='m/d',###}</span>
+					<a title="{$va.title}" target="_blank" href="{:U('/' . $va['id'])}">{$va.title}</a>
+				</li>
+			</foreach>	
+</ul>
+

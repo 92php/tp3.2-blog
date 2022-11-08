@@ -1,0 +1,71 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>92php.net</title>
+<link href="/Public/Css/style.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div class="location">
+   <span>当前位置:用户管理&nbsp;>&nbsp;节点管理</span>
+ </div>
+<div class="main">
+ <div class="tags">
+    <a href="#"  target="main" title="节点管理" >节点管理</a>|
+   <a href="#" target="main" title="添加节点" class="main_select"><span>添加节点</span></a>
+   <div class="line"></div>
+<div class="table-list">
+     <form action="{:U('Admin/Rbac/addNodeHandle')}" method="POST" id="myform">
+    <table width="100%" cellspacing="0" style="font-size:12px;">
+       <tbody>
+            
+            <td width="400" align="right">{$type}名称：</td>
+            <td align="left">
+           <input type="text" name="name" id="name" >
+            </td>	
+            </tr>
+            <tr>
+            <td width="50" align="right">{$type}描述：</td>
+            <td align="left">
+           <input type="text" name="title" id="title">
+            </td>	
+            </tr>
+            <tr>
+            <td width="50" align="right">开启状态：</td>
+            <td align="left">
+           <input type="radio" name="status" value='1' checked='checked'/>&nbsp;开启&nbsp;
+           <input type="radio" name="status" value='0'/>&nbsp;关闭
+            </td> 
+            </tr>
+        
+             <tr>
+            <td width="50" align="right">备注：</td>
+            <td align="left">
+           <input type="text" name="remark" id="remark">
+            </td>	
+            </tr>
+             <tr>
+            <td width="50" align="right">排序：</td>
+            <td align="left">
+             
+            
+            <input type="text" name="sort" id="sort" size="5" value='1'>
+            
+
+            </td>	
+            </tr> 
+       </tbody>
+    
+ </table>
+	<div class="btn" style="font-size:12px;">
+            <input type="hidden" name="pid"  value='{$pid}'>
+            <input type="hidden" name="level"  value='{$level}'>
+          <input type="submit" value="提交" id="send" class="button" style="margin-left: 450px;">&nbsp;&nbsp;
+		
+	   </div>
+</form>
+</div>
+</div>
+</div>
+</body>
+</html>

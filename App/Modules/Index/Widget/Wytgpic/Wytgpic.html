@@ -1,0 +1,10 @@
+<ul class="clearfix">
+			
+			 <li class="content_post">
+			   <foreach name='Wytgpic' item='vc'>	
+				 <cite><a title="{$vc.title}" target="_blank" href="{:U('/' . $vc['id'])}"><img width="104px" height="84px" border="0" alt="{$vc.title}" src="/App/Modules/Index/Tpl/Public/Images/random/11.jpg" /></a></cite>
+				 <em><a title="{$vc.title}" target="_blank" rel="bookmark" href="{:U('/' . $vc['id'])}">{$vc.title}</a></em><br/>
+				 <em class="excerpt"> {$vc.content|msubstr=0,55}... </em>
+			</foreach>	
+			</li>
+			</ul>

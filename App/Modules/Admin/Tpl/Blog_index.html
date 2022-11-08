@@ -1,0 +1,56 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>92php.net</title>
+<link href="/Public/Css/style.css" rel="stylesheet" type="text/css" />
+<link href="/Public/Css/public.css" rel="stylesheet" type="text/css" />
+
+</head>
+
+
+<body>
+<div class="location">
+      <span>当前位置:文章管理&nbsp;>&nbsp;文章列表</span>
+ </div>
+<div class="main">
+ 
+<div class="table-list">
+   
+	<table class="table">
+     <tr>
+         <th>ID</th>
+         <th>标题</th>
+         <th>所属分类</th>
+         <th>点击次数</th>
+         <th>发布时间</th>
+         <th>操作</th>
+     </tr>
+     <foreach name="blog" item="v">
+        <tr>
+            <td width="8%">{$v.id}</td>
+            <td>
+                {$v.title}<foreach name="v.attr" item="value"><strong style="color:{$value.color};padding:0 5px;">[{$value.name}]</strong></foreach>
+            </td>
+            <td width="12%">{$v.cate}</td>
+            <td width="12%">{$v.click}</td>
+            <td width="12%">{$v.time|date='y-m-d H:i',###}</td>
+            <td width="20%">
+                <if condition='ACTION_NAME eq "index"'>
+                [<a href="{:U(GROUP_NAME . '/Blog/Blog', array('id' => $v['id']))}">修改</a>]
+                [<a href="{:U(GROUP_NAME.'/Blog/ToTrach',array('id'=>$v['id'],'type'=>1))}">删除</a>]
+                <else/>
+                 [<a href="{:U(GROUP_NAME.'/Blog/ToTrach',array('id'=>$v['id'],'type'=>0))}">还原</a>]
+                [<a href="{:U(GROUP_NAME.'/Blog/delete',array('id'=>$v['id']))}">彻底删除</a>]
+                </if>
+            </td>
+        </tr>
+    </foreach>
+    </table>
+
+	
+</div>
+<div id="pages"> {$page} </div>
+</div>
+</body>
+</html>

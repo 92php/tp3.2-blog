@@ -1,0 +1,10 @@
+<div id="postviewlist" class="tab_list divmargin tcppostviewlist">
+	<h3 class="tit">
+		<strong class="on" style="border-left:none;border-right:solid 1px #CCC;">热门文章</strong>		
+	</h3>
+	<ul>	
+       <foreach name='blog' item='v' key='key'>	
+		<li class="listnumli num{$key+1}"><span>{$v.click}</span><a target="_blank" href="{:U('/'.$v['id'])}" rel="bookmark" title="" >{$v.title}</a></li>
+      </foreach>
+    </ul>		
+</div>

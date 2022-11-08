@@ -1,0 +1,64 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>92php.net</title>
+<link href="/Public/Css/style.css" rel="stylesheet" type="text/css" />
+<link href="/Public/Css/public.css" rel="stylesheet" type="text/css" />
+</head>
+
+
+<body>
+<div class="location">
+      <span>当前位置:分类管理&nbsp;>&nbsp;<if condition='isset($_GET["id"])'>修改分类<else/>添加分类</if></span>
+ </div>
+<div class="main">
+ 
+<div class="table-list">
+	<form action="{:U(GROUP_NAME.'/Category/runAddCate')}" method="post">
+   <table class="table"> 
+    <tr>
+
+       <th colspan="2"><if condition='isset($_GET["id"])'>
+                修改分类目录
+            <elseif condition='$_GET["pid"] eq 0' />
+                添加分类目录
+             <else/>
+                添加子分类目录
+             </if></th>
+
+    </tr>
+	 <input type="hidden" name="id" value="{$cate.id}" />
+    <tr>
+    	<td align="right">分类栏目名称：</td>
+    	<td>
+    		<input type="text" name="name" value="{$cate.name}" />
+    	</td>
+    </tr>
+	 <tr>
+             <td>父级分类</td>
+             <td>
+                 <input type="text" name="pid" value="{$cate.pid}" />
+             </td>
+         </tr>
+    <tr>
+        <td align="right">排序：</td>
+        <td>
+        	<input type="text" name="sort" value="{$cate['sort']?$cate['sort']:100}" />
+        </td>
+    </tr>
+    <tr>
+    	<td colspan="2" align="center">
+    		<input type="hidden" name="pid" value='{$pid}' />
+    		<input type="submit" value="保存分类" />
+    	</td>
+    </tr>
+
+   </table>
+  </form>
+	
+</div>
+<div id="pages">    </div>
+</div>
+</body>
+</html>

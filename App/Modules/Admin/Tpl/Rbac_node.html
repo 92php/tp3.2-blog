@@ -1,0 +1,111 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>92php.net</title>
+<link href="/Public/Css/style.css" rel="stylesheet" type="text/css" />
+</head>
+<style type="text/css"> 
+ #wrap{ width: 94%;
+       height: auto;
+       overflow: hidden;
+       margin: 20px auto;
+       padding: 10px 20px;
+       border: 1px solid #ccc; 
+ }
+ #wrap .add-app{
+     display: block;
+     width: 100px;
+     height: 28px;
+     line-height: 28px;
+     text-align: center;
+     background: #670768;
+     color:#fff;
+     border-radius: 4px;
+ }
+ #wrap .app{
+    padding: 10px;
+    margin-top:20px;
+    border: 1px solid #f6f6f6;
+    border-radius: 4px; 
+ }
+ #wrap .app p{
+    height: 30px;
+    line-height: 30px;
+
+ }
+ #wrap .app p strong{
+  font-size: 20px;
+  color: #0b99d8;
+ }
+#wrap .app dl {
+    margin: 10px 0;
+    border: 1px solid #dcdcdc;
+    height: auto;
+    overflow: hidden;
+
+}
+#wrap .app dl dt{
+  display: block;
+  height: 36px;
+  line-height: 36px;
+  background: #e6e6fa;
+  text-indent: 10px;
+}
+#wrap .app dl dt strong{
+  font-size: 16px;
+  color: #61a1fa;
+}
+#wrap .app dl dd{
+  padding: 10px;
+  float: left;
+}
+</style> 
+
+<body>
+<div class="location">
+      <span>当前位置:用户管理&nbsp;>&nbsp;节点管理</span>
+ </div>
+<div class="main">
+ <div class="tags">
+    <a href="#"  target="main" title="管理列表" class="main_select"><span>管理列表</span></a>|
+   <a href="#" target="main" title="添加节点">添加节点</a>
+   <div class="line"/></div>
+</div>
+<div class="table-list">
+    
+<div id='wrap'>
+  <a href="{:U('Admin/Rbac/addNode')}" class="add-app">添加应用</a>
+  <foreach name='node' item='app'>
+  <div class='app'>
+    <p>
+      <strong>{$app.title}</strong>
+      [<a href="{:U('Admin/Rbac/addNode',array('pid'=>$app['id'],'level'=>2))}">添加控制器</a>]
+          [<a href="">修改</a>]
+          [<a href="">删除</a>]
+    </p>
+    <foreach name="app.child" item="action">
+     <dl>
+       <dt>
+         <strong>{$action.title}</strong>
+         [<a href="{:U('Admin/Rbac/addNode',array('pid'=>$action['id'],'level'=>3))}">添加方法</a>]
+       </dt>
+       <foreach name='action.child' item='method'>
+        <dd>
+          <span>{$method.title}</span>
+          [<a href="">修改</a>]
+          [<a href="">删除</a>]
+        </dd>
+		</foreach>
+     </dl>
+    </foreach>
+  </div>
+  </foreach>
+
+</div>
+	
+</div>
+<div id="pages">  19 条 1/2 页       <span class='current'>1</span><a href=''>2</a>   </div>
+</div>
+</body>
+</html>

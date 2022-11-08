@@ -1,0 +1,195 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//CN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh-CN">
+<head><title>未找到页面 | PHP学习博客</title>
+<meta name="keywords" content="未找到页面" />
+<meta name="description" content="PHP学习博客有关 '未找到页面' 的文章.." />
+<meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+<meta name="baidu-site-verification" content="AfcFFv333X" />
+<link rel="stylesheet" href="http://www.phpxx.info/wp-content/themes/ConcisePro/style.css" type="text/css" media="screen" /><link rel="alternate" type="application/rss+xml" title="PHP学习博客 RSS Feed" href="http://www.phpxx.info/feed" /><link rel="alternate" type="application/atom+xml" title="PHP学习博客 Atom Feed" href="http://www.phpxx.info/feed/atom" /><link rel="pingback" href="http://www.phpxx.info/xmlrpc.php" /><link rel="shortcut icon" href="http://www.phpxx.info/wp-content/themes/ConcisePro/images/favicon.ico" /><script type="text/javascript" src="http://www.phpxx.info/wp-content/themes/ConcisePro/js/jquery.min.js" ></script><script type="text/javascript" src="http://www.phpxx.info/wp-content/themes/ConcisePro/js/common.js" ></script></head><body>
+	<div id="header" class="png_bg">
+	<div id="headercontent" style="position:relative;">
+		<div class="content">
+			<div class="right">
+				<div id="topmenu" class="menu-head_menu-container"><ul id="menu-head_menu" class="menu"><li id="menu-item-756" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-756"><a href="http://www.phpxx.info/about">关于我们</a></li>
+<li id="menu-item-754" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-754"><a href="http://www.phpxx.info/guestbook">访客留言</a></li>
+<li id="menu-item-755" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-755"><a href="http://www.phpxx.info/links">友情链接</a></li>
+<li id="menu-item-764" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-764"><a href="http://www.phpxx.info/sitemap.html">网站地图</a></li>
+<li id="menu-item-765" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-765"><a href="http://www.phpxx.info/feed">订阅本站</a></li>
+</ul></div>			</div>
+			<div class="left">
+				<div id="userlogin"> 	
+					<span id="localtime">
+	<script type="text/javascript">
+	　today=new Date(); var tdate,tday, x,year; var x = new Array("星期日", "星期一", "星期二", "星期三", "星期四", "星期五","星期六");
+	　　var MSIE=navigator.userAgent.indexOf("MSIE");
+	　　if(MSIE != -1){
+	　　 year =(today.getFullYear());}
+	　　else{
+	　　 year = (today.getYear()+1900);}
+	　　tdate="今天是："+year+ "年" + (today.getMonth() + 1 ) + "月" + today.getDate() + "日" + " " + x[today.getDay()];
+	　　document.write(tdate); 
+	//-->
+	</script>
+</span> 
+					<span id="divLogin">
+	
+</span>
+&#8260;&nbsp;&nbsp;<a href="http://www.phpxx.info/wp-login.php?action=register">注册</a><div id="smallLay">
+	<div id="smallLay_box">
+	<form action="http://www.phpxx.info/wp-login.php" method="post" id="loginform">
+		<div class="loginblock">
+			<ul>
+				<li class="login"><input type="text" name="log" id="log" size="" tabindex="11" /></li>
+				<li class="password"><input type="password" name="pwd" id="pwd"  size="" tabindex="12" /></li>
+								<li class="lefted"><button value="Submit" id="submit_t" type="submit" tabindex="13">登录</button></li>
+			</ul>
+			<input type="hidden" name="redirect_to" value="/wp-content/themes/ConcisePro/css/shortcodes.css" />
+			<p class="autologin" style="margin:0;"><input type="checkbox" name="rememberme" id="modlogn_remember" value="yes"  checked="checked" alt="Remember Me" />下次自动登录</p>
+		</div>
+	</form>
+	</div>
+</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div id="header_inner">
+					<div class="banner clearfix">
+					<div class="logo">	<h1>		<a href="http://www.phpxx.info" class="png_bg" title="PHP学习博客">			<span class="hidden">PHP学习博客</span>		</a>	</h1></div>					</div>
+	</div>
+	<div id="header_menu" class="clearfix">
+		<div id="navmenu" class="menu-menu-container"><ul id="menu-menu" class="menu"><li id="menu-item-728" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-728"><a href="http://www.phpxx.info/">本站首页</a></li>
+<li id="menu-item-206" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-206"><a href="http://www.phpxx.info/php">PHP技术</a>
+<ul class="sub-menu">
+	<li id="menu-item-771" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-771"><a href="http://www.phpxx.info/php-base">PHP基础知识</a></li>
+	<li id="menu-item-772" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-772"><a href="http://www.phpxx.info/php-code">PHP源码下载</a></li>
+	<li id="menu-item-779" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-779"><a href="http://www.phpxx.info/document-downloads">PHP文档下载</a></li>
+</ul>
+</li>
+<li id="menu-item-280" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-280"><a href="http://www.phpxx.info/front-skills">前端技术</a>
+<ul class="sub-menu">
+	<li id="menu-item-774" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-774"><a href="http://www.phpxx.info/css-div">CSS技术</a></li>
+	<li id="menu-item-776" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-776"><a href="http://www.phpxx.info/xml">XML技术</a></li>
+	<li id="menu-item-775" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-775"><a href="http://www.phpxx.info/javascript">Javascript</a></li>
+	<li id="menu-item-773" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-773"><a href="http://www.phpxx.info/ajax">AJAX技术</a></li>
+</ul>
+</li>
+<li id="menu-item-781" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-781"><a href="http://www.phpxx.info/data-storage">数据存储</a>
+<ul class="sub-menu">
+	<li id="menu-item-782" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-782"><a href="http://www.phpxx.info/mysql-database">MySQL数据库</a></li>
+</ul>
+</li>
+<li id="menu-item-386" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-386"><a href="http://www.phpxx.info/system-architecture">系统架构</a>
+<ul class="sub-menu">
+	<li id="menu-item-777" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-777"><a href="http://www.phpxx.info/linux">Linux</a></li>
+	<li id="menu-item-778" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-778"><a href="http://www.phpxx.info/windows">Windows</a></li>
+</ul>
+</li>
+<li id="menu-item-352" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-352"><a href="http://www.phpxx.info/it-news">行业快讯</a></li>
+<li id="menu-item-351" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-351"><a href="http://www.phpxx.info/operation">运营推广</a></li>
+<li id="menu-item-758" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-758"><a href="http://www.phpxx.info/archives">文章归档</a></li>
+<li id="menu-item-804" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-804"><a href="http://www.phpxx.info/tags">全部标签</a></li>
+</ul></div>		<div class="clearfix"></div>
+	</div>
+</div>		
+	<div id="wrapper" class="clearfix">
+		<div id="navigation">
+			<div class="navigation">
+				<strong>
+				<a title="返回首页" href="http://www.phpxx.info">home</a>
+				</strong>
+				<a>咦，怎么跑到这里来了呢？</a>
+			</div>
+																																</div>
+		<div id="content" class="fl">
+			<div class="pages divmargin">
+				<div class="entry">
+					<div style="text-align:center;">
+						<h3>对不起，您要查找的数据不存在，您可以重新搜索</h3>
+													<div class="searchs divmargin">	<div class="entry">		<form method="get" id="searchform" action="http://www.phpxx.info/">			<input type="text" value="搜索" onclick="this.value='';" name="s" id="s" class="swap_value" />			<input type="button" class="submit" id="go" alt="搜索" value="搜索" />		</form>	</div></div>											</div>
+					<div class="error">
+						<DIV style="text-align:center;"><a href="http://www.phpxx.info"><IMG style="border:0px;" height=312 src="http://www.phpxx.info/wp-content/themes/ConcisePro/images/404.gif" width=512></a></DIV>
+					</div>
+					<div class="c4">
+						<table border="0" cellpadding="0" cellspacing="0" width="100%" height="100%">
+							<tr>
+								<form name="loading">
+								<td align="center">
+									<p><font color="gray">系统将在100秒后自动跳转到首页，请稍候……</font></p>
+									<p>
+										<input type="text" name="chart" size="47" style="font-family:Arial;font-weight:bolder;color:gray;background-color:white;padding:0px;border-style:none;">
+										<br>
+										<input type="text" name="percent" size="47" style="font-family:Arial;color:gray;text-align:center;border-width:medium;border-style:none;margin-top:5px;">
+										<script language="javascript">
+											var bar=0;var line="||";var amount="||";
+											count()
+											function count(){
+												bar=bar+2;
+												amount=amount+line;
+												document.loading.chart.value=amount;
+												document.loading.percent.value=bar+"%";
+												if (bar<99){
+													setTimeout("count()",1000);
+												}
+												else{
+													window.location = "http://www.phpxx.info";
+												}
+											}
+										</script>
+									</p>
+								</td>
+								</form>
+							</tr>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="sidebar" class="fr">
+		
+	
+	
+	</div>	</div>
+			<div id="footer">
+						<div id="footer_menu" class="clean clearfix">
+				<div class="menu"><ul><li class="page_item page-item-22"><a href="http://www.phpxx.info/about">关于我们</a></li><li class="page_item page-item-48"><a href="http://www.phpxx.info/guestbook">访客留言</a></li><li class="page_item page-item-141"><a href="http://www.phpxx.info/tougao">网友投稿</a></li><li class="page_item page-item-39"><a href="http://www.phpxx.info/links">友情链接</a></li><li class="page_item page-item-513"><a href="http://www.phpxx.info/archives">文章归档</a></li><li class="page_item page-item-488"><a href="http://www.phpxx.info/tags">全部标签</a></li></ul></div>
+			</div>
+			<div class="footer">
+				<div id="declare">
+					本站大部分原创少数素材来源于网络，如有侵权，请及时和我联系，本站将在第一时间删除相关资源！				</div>
+				<div id="copyright">
+					Copyright @ 2012-2013  PHP学习博客 版权所有. 									</div>
+			</div>
+			<div id="themeversion">
+				Powered By PHP学习博客. Theme by <a href="http://www.itbobo.com" title="IT伯伯">IT伯伯</a>. 23次查询.
+				<script type="text/javascript">
+                           var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+                           document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F542c34f8eb86e11c8f82dbb325a3ca4b'          type='text/javascript'%3E%3C/script%3E"));
+                          </script>	
+<script src="http://s19.cnzz.com/stat.php?id=4878326&web_id=4878326&show=pic1" language="JavaScript"></script>			</div>	
+		</div>
+		<div id="loading" style="position:fixed !important;position:absolute;top:0;left:0;height:100%; width:100%; z-index:999; background:#000 url('http://www.phpxx.info/wp-content/themes/ConcisePro/images/loading.gif') no-repeat center center; opacity:0.6; filter:alpha(opacity=60);font-size:14px;line-height:20px;" onclick="javascript:turnoff('loading')">
+			<p id="loading-one" style="color:#fff;position:absolute; top:50%; left:50%; margin:20px 0 0 -50px; padding:3px 10px;" onclick="javascript:turnoff('loading')">页面载入中..</p>
+		</div>
+		<script type="text/javascript">
+		//<![CDATA[
+		  function turnoff(obj){
+			document.getElementById(obj).style.display="none";
+		  }
+		//]]>
+		</script>
+		
+<!-- Baidu Button BEGIN -->
+<script type="text/javascript" id="bdshare_js" data="type=slide&amp;img=3&amp;pos=right&amp;uid=1521593" ></script>
+<script type="text/javascript" id="bdshell_js"></script>
+<script type="text/javascript">
+var bds_config={"bdTop":100};
+document.getElementById("bdshell_js").src = "http://bdimg.share.baidu.com/static/js/shell_v2.js?cdnversion=" + Math.ceil(new Date()/3600000);
+</script>
+<!-- Baidu Button END -->
+     <div id="full" style="width:50px; height:95px; position:fixed; left:50%; top:425px; margin-left:520px; z-index:100; text-align:center; cursor:pointer;"><a><img src="http://www.phpxx.info/wp-content/themes/ConcisePro/images/back-top.jpg" border=0 alt="返回顶部"></a> </div>
+
+    <script type="text/javascript">var isie6 = window.XMLHttpRequest ? false : true; function newtoponload() { var c = document.getElementById("full"); function b() { var a = document.documentElement.scrollTop || window.pageYOffset || document.body.scrollTop; if (a > 0) { if (isie6) { c.style.display = "none"; clearTimeout(window.show); window.show = setTimeout(function () { var d = document.documentElement.scrollTop || window.pageYOffset || document.body.scrollTop; if (d > 0) { c.style.display = "block"; c.style.top = (400 + d) + "px" } }, 300) } else { c.style.display = "block" } } else { c.style.display = "none" } } if (isie6) { c.style.position = "absolute" } window.onscroll = b; b() } if (window.attachEvent) { window.attachEvent("onload", newtoponload) } else { window.addEventListener("load", newtoponload, false) } document.getElementById("full").onclick = function () { window.scrollTo(0, 0) };</script>
+	</body>
+</html>

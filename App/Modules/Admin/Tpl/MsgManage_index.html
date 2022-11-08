@@ -1,0 +1,60 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>92php.net</title>
+<css file='/Public/Css/style.css'/>
+
+<body>
+    <div class="location">
+     <span>当前位置:常用操作&nbsp;>&nbsp;帖子管理</span>
+    </div>
+	
+<div class="main">
+ <div class="tags">
+    <a href="#"  target="main" title="管理列表" class="main_select"><span>帖子列表</span></a>|
+    <a href="{:U('Wish/Index/index')}" target="_blank" title="添加内容">添加内容</a>
+   </div>
+</div>
+
+
+<div class="table-list">
+   
+    <table width="100%" cellspacing="0" style="font-size:12px;">
+        <thead>
+            <tr>
+            <th width="50" align="center">选取</th>
+			<th align="center">排序</th>
+			<th align="center">ID</th>
+			<th align="center">标题</th>
+			<th  align="center">审核状态</th>	
+			<th  align="center">发布内容</th>												
+			<th align="center">发布人</th>
+			<th  align="center">更新时间</th>
+			<th  align="center">管理操作</th>			
+			
+            </tr>
+        </thead>
+    <tbody> 
+    	<foreach name='wish' item='v'>
+     <tr>
+	<td align="center"><input type="checkbox" name="id[]" value="1" id="id"></td>	
+	<td align="center"><input type=hidden name="ids[]" value="1"><input type="text" name="ord[]" size="1" value="0"></td>
+	<td align="center">{$v.id}</td>
+	<td align="center">{$v.username}</td>
+	<td align="center"><span style="color:green">√</span></td>
+	<td align="center">{$v.content|replace_phiz=###}</td>		
+	<td align="center">管理员</td>
+	<td align="center">{$v.time|date='y-m-d H:i',###}</td>
+	<td align="center"> <a href="{:U('Admin/MsgManage/delete',array('id'=>$v['id']))}">删除</a>          
+    </td>	
+	</tr>	
+</foreach>
+  </tbody>
+ </table>
+	
+</div><!--table-list end-->
+&nbsp;&nbsp;<div id="pages">{$page}</div>
+
+</body>
+</html>

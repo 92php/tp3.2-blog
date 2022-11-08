@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>92php.net</title>
+<style type="text/css">
+td {font-size: 12px;}
+</style>
+<link rel="stylesheet" href="/Public/Css/menu.css" type="text/css">
+<script type="text/javascript" src="/Public/Js/jquery-1.js"></script>
+<script>
+$(function(){
+$(".title").click(function(){
+$(this).next().slideToggle(100).end().siblings(".title").next().slideUp();
+})
+})
+</script>
+</head>
+
+<body>
+<div class="title"><dt><b>博文管理</b></dt></div>
+<div id="te01" class="item1">
+          
+          <li>
+              <div class="items">
+                <div class="fllct"><a href="/index.php/Admin/Blog/index" target="main" >博文列表</a></div>								        
+              </div>
+            </li>
+            <li>
+              <div class="items">
+                <div class="fllct"><a href="/index.php/Admin/Blog/blog" target="main" >添加博文</a></div>								        
+              </div>
+            </li>
+             <li>
+              <div class="items">
+                <div class="fllct"><a href="/index.php/Admin/Blog/trach" target="main" >回收站</a></div>                       
+              </div>
+            </li>
+
+            <div class="line10"></div>
+</div>
+<div class="title"><dt><b>属性管理</b></dt></div>
+<div id="te02" class="item1" style="display:none;">
+<li>
+              <div class="items">
+                <div class="fllct"><a href="/index.php/Admin/Attribute/index" target="main" >属性列表</a></div>								        
+              </div>
+            </li>
+             <li>
+              <div class="items">
+                <div class="fllct"><a href="/index.php/Admin/Attribute/addAttr" target="main" >添加属性</a></div>								        
+              </div>
+            </li>
+
+            <div class="line10"></div>
+</div>
+<div class="title"><dt><b>分类管理</b></dt></div>
+<div id="te03" class="item" style="display:none;">
+<li>
+              <div class="items">
+                <div class="fllct"><a href="/index.php/Admin/Category/index" target="main" >分类列表</a></div>								        
+              </div>
+            </li>
+             <li>
+              <div class="items">
+                <div class="fllct"><a href="/index.php/Admin/Category/addCate" target="main" >添加分类</a></div>								        
+              </div>
+            </li>
+            
+          
+            <div class="line10"></div>
+</div>
+<div class="title"><dt><b>RBAC管理</b></dt></div>
+<div id="te04" class="item2" style="display:none;">
+ <li>
+              <div class="items">
+                <div class="fllct"><a href="/index.php/Admin/Rbac/index" target="main" title="用户列表">用户列表</a></div>								        
+              </div>
+            </li>
+            <li>
+              <div class="items">
+                <div class="fllct"><a href="/index.php/Admin/Rbac/role" target="main" title="角色列表"><font color="red">角色列表</font></a></div>								        
+              </div>
+            </li>
+            <li>
+              <div class="items">
+                <div class="fllct"><a href="/index.php/Admin/Rbac/node" target="main" title="节点列表">节点列表</a></div>								        
+              </div>
+            </li>
+            <li>
+              <div class="items">
+                <div class="fllct"><a href="/index.php/Admin/Rbac/addUser" target="main" title="添加用户">添加用户</a></div>								        
+              </div>
+            </li>
+            <li>
+              <div class="items">
+                <div class="fllct"><a href="/index.php/Admin/Rbac/addRole" target="main" title="添加角色">添加角色</a></div>								        
+              </div>
+            </li>
+              <li>
+              <div class="items">
+                <div class="fllct"><a href="/index.php/Admin/Rbac/addNode" target="main" title="添加节点">添加节点</a></div>                       
+              </div>
+            </li>
+            <div class="line10"></div>
+</div>
+<div class="title"><dt><b>帖子管理</b></dt></div>
+<div id="te05" class="item2" style="display:none;">
+           <li>
+              <div class="items">
+                <div class="fllct"><a href="/index.php/Admin/MsgManage/index" target="main" title="查看帖子">查看帖子</a></div>								        
+              </div>
+            </li>
+                     
+            <div class="line10"></div>
+</div>
+<div class="title"><dt><b>系统设置</b></dt></div>
+<div id="te06" class="item2" style="display:none;">
+           <li>
+              <div class="items">
+                <div class="fllct"><a href="#" target="main" >验证码设置</a></div>                       
+              </div>
+            </li>
+                     
+            <div class="line10"></div>
+</div>
+
+</body>
+</html>

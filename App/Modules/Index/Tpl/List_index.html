@@ -1,0 +1,222 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//CN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh-CN">
+<meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+<head>
+<title></title>
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<link rel="stylesheet" href="/App/Modules/Index/Tpl/Public/Css/style.css" type="text/css" media="screen" />
+<script type="text/javascript" src="/App/Modules/Index/Tpl/Public/Js/jquery.min.js" ></script>
+<script type="text/javascript" src="/App/Modules/Index/Tpl/Public/Js/common.js" ></script>
+</head>
+<body>
+<div id="header" class="png_bg">
+	
+	<div id="headercontent" style="position:relative;">
+		<div class="content">
+			<div class="right">
+					<div id="topmenu" class="menu-head_menu-container">
+						<ul id="menu-head_menu" class="menu">
+						  <li id="menu-item-756" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-756"><a href="/">关于我们</a></li>
+						  <li id="menu-item-754" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-754"><a href="/">访客留言</a></li>
+						  <li id="menu-item-755" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-755"><a href="/">友情链接</a></li>
+						  <li id="menu-item-764" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-764"><a href="/">网站地图</a></li>
+						  <li id="menu-item-765" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-765"><a href="/">订阅本站</a></li>
+						</ul>
+					</div>
+		    </div>
+			<div class="left">
+				<div id="userlogin"> 	
+					<span id="localtime">
+						<script type="text/javascript">
+						　today=new Date(); var tdate,tday, x,year; var x = new Array("星期日", "星期一", "星期二", "星期三", "星期四", "星期五","星期六");
+						　　var MSIE=navigator.userAgent.indexOf("MSIE");
+						　　if(MSIE != -1){
+						　　 year =(today.getFullYear());}
+						　　else{
+						　　 year = (today.getYear()+1900);}
+						　　tdate="今天是："+year+ "年" + (today.getMonth() + 1 ) + "月" + today.getDate() + "日" + " " + x[today.getDay()];
+						　　document.write(tdate); 
+						</script>
+                    </span> 
+                    <span id="divLogin"></span>&#8260;&nbsp;&nbsp;<a href="#">注册</a>
+					<div id="smallLay">
+						<div id="smallLay_box">
+						<form action="#" method="post" id="loginform">
+							<div class="loginblock">
+							 <ul>
+								<li class="login"><input type="text" name="log" id="log" size="" tabindex="11" /></li>
+								<li class="password"><input type="password" name="pwd" id="pwd"  size="" tabindex="12" /></li>
+								<li class="lefted"><button value="Submit" id="submit_t" type="submit" tabindex="13">登录</button></li>
+							 </ul>
+								<input type="hidden" name="redirect_to" value="/" />
+								<p class="autologin" style="margin:0;"><input type="checkbox" name="rememberme" id="modlogn_remember" value="yes"  checked="checked" alt="Remember Me" />下次自动登录</p>
+							</div>
+						</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<div id="header_inner">
+		<div class="banner clearfix">
+			<div class="logo">
+				<h1><a href="/" class="png_bg" title=""><span class="hidden">PHP学习技术</span></a></h1>
+			</div>
+		</div>
+	</div>
+	
+
+<php>
+	$cate=M('cate')->order('sort')->select();
+	import('Class.Category',APP_PATH);
+	$cate=Category::unlimitedForLayer($cate);
+	
+	</php>
+	<div id="header_menu" class="clearfix">
+		<div id="navmenu" class="menu-menu-container">
+		<ul id="menu-menu" class="menu">
+		<li id="menu-item-728" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home "><a href="/">网站首页</a></li>
+		<foreach name="cate" item="v">
+        <li id="menu-item-206" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-206"><a href="/index.php/c_{$v.id}.html">{$v.name}</a>
+			<if condition='$v["child"]'>
+			<ul class="sub-menu">
+		<foreach name="v.child" item="value">
+		<li id="menu-item-771" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-771"><a href="/index.php/c_{$value.id}.html">{$value.name}</a></li>
+				</foreach>
+				</ul>
+				</if>
+        </li>
+            </foreach>
+		</ul>
+       </div>
+	   <div class="clearfix"></div>
+	</div>
+</div>
+
+<!--
+<div id="header_menu" class="clearfix">
+		<div id="navmenu" class="menu-menu-container">
+		<ul id="menu-menu" class="menu">
+		<li id="menu-item-728" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home menu-item-728"><a href="/">网站首页</a></li>
+        <nav order='sort ASC'>  	
+		<li id="menu-item-206" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-206"><a href="">{$name}</a>
+			<ul class="sub-menu">
+			<foreach name='child' item='v'>
+				<li id="menu-item-771" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-771"><a href="">{$v.name}</a></li>
+	        </foreach>
+		   </ul>
+        </li>
+		</nav>
+		  </ul>
+       </div>
+	   <div class="clearfix"></div>
+	</div>
+</div>
+-->	
+
+<!--正文-->
+	<div id="wrapper" class="clearfix">
+<div id="navigation">
+     <div class="navigation">
+       	<strong><a title="返回首页" href="/">home</a></strong>
+		<php> 
+	    $id=(int) $_GET['id'];		
+		$sql="SELECT * FROM `hd_cate` WHERE id =$id";
+	    $cate1=M('cate')->query($sql);		
+		</php>
+		<foreach name="cate1" item="v1">
+		<a rel="category tag"  href="/index.php/c_{$v1.id}.html">{$v1.name}</a>	
+		</foreach>
+	 </div>
+	<div class="categoryrss">
+		<a href="" title="订阅该分类更新" target="_blank">分类订阅</a>
+	</div> 
+</div>
+		<div id="content" class="fl">
+		<div class="page_navi divmargin">{$page}</div>
+<div class="cat_list">
+	<ul>
+	<foreach name='blog' item='v'>
+		<li>
+			<h2>
+                  <span class="date fr">日期：{$v.time|date='Y年m月d日',###} 浏览：{$v.click}次</span>
+				<a href="{:U('/' . $v['id'])}" title="{$v.title}" target="_blank">{$v.title}</a> 
+			</h2>
+
+		</li>
+		</foreach>		
+			</ul>
+</div>
+<div class="page_navi divmargin">{$page}</div>
+		</div>
+		
+<div id="sidebar" class="fr">
+<div class="widget">
+	<div class="search divmargin tcpsearch">
+	<form method="#" id="searchform" action="#">
+		<input type="text" onfocus="if (this.value == '请输入关键字进行搜索') {this.value = '';}" onblur="if (this.value == '') {this.value = '请输入关键字进行搜索';}" value="请输入关键字进行搜索" name="s" class="s" />
+		<input class="btn searchsubmit" id="go" alt="搜索" type="button" value="搜索" />
+	</form>
+</div>
+<div class="widget_box divmargin tcpcontact" style="overflow:visible;">	
+<h2 class="title"><strong class="on">联系方式</strong>	</h2>
+	<ul class="contact">
+	<li><a title="有急事QQ博主" href="http://wpa.qq.com/msgrd?v=3&uin=812178731&site=qq&menu=yes" target="_blank"><div id="con_QQ"></div>	</a></li>
+	<li><a title="收听腾讯微博" href="http://t.qq.com/q812178731" target="_blank"><div id="con_Qblog"></div></a></li>		
+	<li><a title="浏览博主QQ空间" href="http://812178731.qzone.qq.com/" target="_blank"><div id="con_Qzone"></div></a></li>				
+	<li><a title="浏览博主朋友网" href="/" target="_blank"><div id="con_Pengyou"></div></a></li>							
+	<li><a title="浏览人人网" href="/" target="_blank"><div id="con_RenRen"></div></a></li>				
+	<li><a title="RSS订阅本站" href="/" target="_blank"><div id="con_RSS"></div></a></li>							
+	<li><a title="收听新浪微博" href="http://weibo.com/q812178731" target="_blank"><div id="con_Weibo"></div></a></li>						
+	<li><a title="收听网易微博" href="http://t.163.com/q812178731" target="_blank"><div id="con_163"></div></a></li>
+	<li><a title="收听搜狐微博" href="http://92php.t.sohu.com/" target="_blank"><div id="con_Sohu"></div></a></li>			
+	<li><a title="浏览人人小站" href="/" target="_blank"><div id="con_XiaoZhan"></div></a></li>						
+	<li><a title="浏览推他" href="/" target="_blank"><div id="con_Tuita"></div></a></li>						
+	<li><a title="浏览伯点点" href="/" target="_blank">	<div id="con_Diandian"></div></a></li>						
+	
+	</ul>
+
+</div>
+
+{:W('Hot')}
+
+</div>
+</div>
+
+</div>
+
+	<!--foot-->
+<div id="footer">
+			<div id="footer_menu" class="clean clearfix">
+				<div class="menu"><ul><li class="page_item page-item-22"><a href="/">关于我们</a></li><li class="page_item page-item-48"><a href="/">访客留言</a></li><li class="page_item page-item-141"><a href="/">网友投稿</a></li><li class="page_item page-item-39"><a href="/">友情链接</a></li><li class="page_item page-item-513"><a href="/">文章归档</a></li><li class="page_item page-item-488"><a href="/">全部标签</a></li></ul></div>
+			</div>
+			<div class="footer">
+				<div id="declare">
+					本站大部分原创少数素材来源于网络，如有侵权，请及时和我联系，本站将在第一时间删除相关资源！</div>
+				<div id="copyright">
+					Copyright @ 2013-2014  PHP学习技术 版权所有.<script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_4940593'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s9.cnzz.com/stat.php%3Fid%3D4940593' type='text/javascript'%3E%3C/script%3E"));</script></div>
+			</div>
+			<div id="themeversion">
+				Powered By PHP学习技术. Theme by <a href="/" title="时间去哪了">时间去哪了</a>
+							</div>	
+		</div>
+		<div id="loading" style="position:fixed !important;position:absolute;top:0;left:0;height:100%; width:100%; z-index:999; background:#000 url('/App/Modules/Index/Tpl/Public/Images/loading.gif') no-repeat center center; opacity:0.6; filter:alpha(opacity=60);font-size:14px;line-height:20px;" onclick="javascript:turnoff('loading')">
+			<p id="loading-one" style="color:#fff;position:absolute; top:50%; left:50%; margin:20px 0 0 -50px; padding:3px 10px;" onclick="javascript:turnoff('loading')">页面载入中..</p>
+		</div>
+		<script type="text/javascript">
+		//<![CDATA[
+		  function turnoff(obj){
+			document.getElementById(obj).style.display="none";
+		  }
+		//]]>
+		</script>
+		
+
+     <div id="full" style="width:50px; height:95px; position:fixed; left:50%; top:425px; margin-left:520px; z-index:100; text-align:center; cursor:pointer;"><a><img src="/App/Modules/Index/Tpl/Public/Images/back-top.jpg" border=0 alt="返回顶部"></a> </div>
+
+    <script type="text/javascript">var isie6 = window.XMLHttpRequest ? false : true; function newtoponload() { var c = document.getElementById("full"); function b() { var a = document.documentElement.scrollTop || window.pageYOffset || document.body.scrollTop; if (a > 0) { if (isie6) { c.style.display = "none"; clearTimeout(window.show); window.show = setTimeout(function () { var d = document.documentElement.scrollTop || window.pageYOffset || document.body.scrollTop; if (d > 0) { c.style.display = "block"; c.style.top = (400 + d) + "px" } }, 300) } else { c.style.display = "block" } } else { c.style.display = "none" } } if (isie6) { c.style.position = "absolute" } window.onscroll = b; b() } if (window.attachEvent) { window.attachEvent("onload", newtoponload) } else { window.addEventListener("load", newtoponload, false) } document.getElementById("full").onclick = function () { window.scrollTo(0, 0) };</script>
+	</body>
+</html>

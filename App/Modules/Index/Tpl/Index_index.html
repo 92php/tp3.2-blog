@@ -1,0 +1,470 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//CN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh-CN">
+<meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+<head>
+<title></title>
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<link rel="stylesheet" href="/App/Modules/Index/Tpl/Public/Css/style.css" type="text/css" media="screen" />
+<script type="text/javascript" src="/App/Modules/Index/Tpl/Public/Js/jquery.min.js" ></script>
+<script type="text/javascript" src="/App/Modules/Index/Tpl/Public/Js/common.js" ></script>
+</head>
+<body>
+
+	<div id="header" class="png_bg">
+	
+	<div id="headercontent" style="position:relative;">
+		<div class="content">
+			<div class="right">
+					<div id="topmenu" class="menu-head_menu-container">
+						<ul id="menu-head_menu" class="menu">
+						  <li id="menu-item-756" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-756"><a href="/">关于我们</a></li>
+						  <li id="menu-item-754" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-754"><a href="/">访客留言</a></li>
+						  <li id="menu-item-755" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-755"><a href="/">友情链接</a></li>
+						  <li id="menu-item-764" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-764"><a href="/">网站地图</a></li>
+						  <li id="menu-item-765" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-765"><a href="/">订阅本站</a></li>
+						</ul>
+					</div>
+		    </div>
+			<div class="left">
+				<div id="userlogin"> 	
+					<span id="localtime">
+						<script type="text/javascript">
+						　today=new Date(); var tdate,tday, x,year; var x = new Array("星期日", "星期一", "星期二", "星期三", "星期四", "星期五","星期六");
+						　　var MSIE=navigator.userAgent.indexOf("MSIE");
+						　　if(MSIE != -1){
+						　　 year =(today.getFullYear());}
+						　　else{
+						　　 year = (today.getYear()+1900);}
+						　　tdate="今天是："+year+ "年" + (today.getMonth() + 1 ) + "月" + today.getDate() + "日" + " " + x[today.getDay()];
+						　　document.write(tdate); 
+						</script>
+                    </span> 
+                    <span id="divLogin"></span>&#8260;&nbsp;&nbsp;<a href="/">注册</a>
+					<div id="smallLay">
+						<div id="smallLay_box">
+						<form action="#" method="post" id="loginform">
+							<div class="loginblock">
+							 <ul>
+								<li class="login"><input type="text" name="log" id="log" size="" tabindex="11" /></li>
+								<li class="password"><input type="password" name="pwd" id="pwd"  size="" tabindex="12" /></li>
+								<li class="lefted"><button value="Submit" id="submit_t" type="submit" tabindex="13">登录</button></li>
+							 </ul>
+								<input type="hidden" name="redirect_to" value="/" />
+								<p class="autologin" style="margin:0;"><input type="checkbox" name="rememberme" id="modlogn_remember" value="yes"  checked="checked" alt="Remember Me" />下次自动登录</p>
+							</div>
+						</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<div id="header_inner">
+		<div class="banner clearfix">
+			<div class="logo">
+				<h1><a href="" class="png_bg" title="/"><span class="hidden">PHP学习技术</span></a></h1>
+			</div>
+		</div>
+	</div>
+	<php>
+	$cate=M('cate')->order('sort')->select();
+	import('Class.Category',APP_PATH);
+	$cate=Category::unlimitedForLayer($cate);
+	
+	</php>
+	<div id="header_menu" class="clearfix">
+		<div id="navmenu" class="menu-menu-container">
+		<ul id="menu-menu" class="menu">
+		<li id="menu-item-728" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home "><a href="/">网站首页</a></li>
+		<foreach name="cate" item="v">
+        <li id="menu-item-206" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-206"><a href="/index.php/c_{$v.id}.html">{$v.name}</a>
+			<if condition='$v["child"]'>
+			<ul class="sub-menu">
+			<foreach name="v.child" item="value">
+				<li id="menu-item-771" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-771"><a href="/index.php/c_{$value.id}.html">{$value.name}</a></li>
+				</foreach>
+				</ul>
+				</if>
+        </li>
+            </foreach>
+		</ul>
+       </div>
+	   <div class="clearfix"></div>
+	</div>
+</div>
+
+<!--正文-->
+	<div id="wrapper" class="clearfix">
+		<div id="content" class="fl">
+			<div id="daycomment" class="divmargin">
+				<ul style="margin-top: 0px;">
+					<li>
+					<span>推荐阅读:</span>
+            <php> 
+			
+		     $sqlt=" SELECT * FROM `hd_blog`  ORDER BY click DESC LIMIT 0 , 2";
+	         $blogt=M('blog')->query($sqlt);		         
+			</php>
+				<foreach name="blogt" item='vt'>
+					<span><a style="border-right:solid 2px #000;padding-right:10px;margin-right:10px;" title="{$vt.title}" href="/index.php/{$vt.id}.html" target="_blank">{$vt.title}</a></span>
+				 </foreach>	
+					</li>
+				</ul>
+           </div>
+		   
+	<div id="topcomment" class="divmargin">
+			<div class="topcommenttab">
+				<h3>最近更新</h3>
+			</div>
+	<div class="topcommentbox">
+		<div class="topcommentimage">
+			<ul>
+              <li><a title="" target="_blank" href="/"><img width="140px" height="100px" border="0" alt="" src="/App/Modules/Index/Tpl/Public/Images/random/3.jpg" /></a></li>	
+			  <li><a title="" target="_blank" href="/"><img width="140px" height="100px" border="0" alt="" src="/App/Modules/Index/Tpl/Public/Images/uploads/2013/04/addtofavoutite.gif" /></a></li>	
+              <li><a title="" target="_blank" href="/"><img width="140px" height="100px" border="0" alt="" src="/App/Modules/Index/Tpl/Public/Images/random/6.jpg" /></a></li>	
+              <li><a title="" target="_blank" href="/"><img width="140px" height="100px" border="0" alt="" src="/App/Modules/Index/Tpl/Public/Images/random/8.jpg" /></a></li>	
+			</ul>
+		</div>
+		<div class="topcommentlist">
+			<ul>
+			<php> 
+			 $id=9;		
+		     $sql1=" SELECT * FROM `hd_blog` WHERE cid =$id ORDER BY click DESC LIMIT 0 , 1";
+	         $blog1=M('blog')->query($sql1);		         
+			</php>
+			<foreach name="blog1" item='v1'>
+				<li>[<a target="_blank" href="/index.php/c_9.html">PHP函数</a>]
+					<span><a target="_blank" title="{$v1.title}" href="/index.php/{$v1.id}.html">{$v1.title}</a></span>
+					<span class="time"><font color="red">{$v1.time|date='m-d',###}</font></span>
+				</li>
+		    </foreach>
+			<php> 
+			 $id=10;		
+		     $sql2=" SELECT * FROM `hd_blog` WHERE cid =$id ORDER BY click DESC LIMIT 0 , 1";
+	         $blog2=M('blog')->query($sql2);		         
+			</php>
+				<foreach name="blog2" item='v2'>
+				<li>[<a target="_blank" href="/index.php/c_10.html">PHP类库</a>]
+				  <span><a target="_blank" title="{$v2.title}" href="/index.php/{$v2.id}.html">{$v2.title}</a></span>
+					<span class="time"><font color="red">{$v2.time|date='m-d',###}</font></span>
+				</li>
+				</foreach>
+			<php> 
+			 $id=11;		
+		     $sql3=" SELECT * FROM `hd_blog` WHERE cid =$id ORDER BY click DESC LIMIT 0 , 1";
+	         $blog3=M('blog')->query($sql3);		         
+			</php>
+			<foreach name="blog3" item='v3'>
+				<li>[<a target="_blank" href="/index.php/c_11.html">开发框架</a>]
+				   <span><a target="_blank" title="{$v3.title}" href="/index.php/{$v3.id}.html">{$v3.title}</a></span>
+					<span class="time"><font color="red">{$v3.time|date='m-d',###}</font></span>
+				</li>
+			</foreach>	
+			<php> 
+			 $id=12;		
+		     $sql4=" SELECT * FROM `hd_blog` WHERE cid =$id ORDER BY click DESC LIMIT 0 , 1";
+	         $blog4=M('blog')->query($sql4);		         
+			</php>
+			<foreach name="blog4" item='v4'>
+				<li>[<a target="_blank" href="/index.php/c_12.html">模版引擎</a>]
+					<span><a target="_blank" title="{$v4.title}" href="/index.php/{$v4.id}.html">{$v4.title}</a></span>
+					<span class="time"><font color="red">{$v4.time|date='m-d',###}</font></span>
+				</li>
+				</foreach>	
+			<php> 
+			 $id=13;		
+		     $sql5=" SELECT * FROM `hd_blog` WHERE cid =$id ORDER BY click DESC LIMIT 0 , 1";
+	         $blog5=M('blog')->query($sql5);		         
+			</php>	
+               <foreach name="blog5" item='v5'>			
+				<li>[<a target="_blank" href="/index.php/c_13.html">DIV+CSS</a>]
+	                <span><a target="_blank" title="{$v5.title}" href="/index.php/{$v5.id}.html">{$v5.title}</a></span>
+					<span class="time"><font color="red">{$v5.time|date='m-d',###}</font></span>
+				</li>
+				</foreach>	
+			<php> 
+			 $id=14;		
+		     $sql6=" SELECT * FROM `hd_blog` WHERE cid =$id ORDER BY click DESC LIMIT 0 , 1";
+	         $blog6=M('blog')->query($sql6);		         
+			</php>	
+			    <foreach name="blog6" item='v6'>	
+				<li>[<a target="_blank" href="/index.php/c_14.html">JAVASCRIPT</a>]
+				     <span><a target="_blank" title="{$v6.title}" href="/index.php/{$v6.id}.html">{$v6.title}</a></span>
+					<span class="time"><font color="red">{$v6.time|date='m-d',###}</font></span>
+				</li>
+				</foreach>	
+			<php> 
+			 $id=15;		
+		     $sql7=" SELECT * FROM `hd_blog` WHERE cid =$id ORDER BY click DESC LIMIT 0 , 1";
+	         $blog7=M('blog')->query($sql7);		         
+			</php>
+			 <foreach name="blog7" item='v7'>	
+				<li>[<a target="_blank" href="/index.php/c_15.html">HTML5</a>]
+			     <span><a target="_blank" title="{$v7.title}" href="/index.php/{$v7.id}.html">{$v7.title}</a></span>
+					<span class="time"><font color="red">{$v7.time|date='m-d',###}</font></span>
+				</li>
+				</foreach>	
+			<php> 
+			 $id=17;		
+		     $sql8=" SELECT * FROM `hd_blog` WHERE cid =$id ORDER BY click DESC LIMIT 0 , 1";
+	         $blog8=M('blog')->query($sql8);		         
+			</php>
+			 <foreach name="blog8" item='v8'>	
+				<li>[<a target="_blank" href="/index.php/c_17.html">NoSQL</a>]
+			  <span><a target="_blank" title="{$v8.title}" href="/index.php/{$v8.id}.html">{$v8.title}</a></span>
+					<span class="time"><font color="red">{$v8.time|date='m-d',###}</font></span>
+				</li>
+			</foreach>	
+			<php> 
+			 $id=16;		
+		     $sql9=" SELECT * FROM `hd_blog` WHERE cid =$id ORDER BY click DESC LIMIT 0 , 1";
+	         $blog9=M('blog')->query($sql9);		         
+			</php>
+			 <foreach name="blog9" item='v9'>	
+				<li>[<a target="_blank" href="/index.php/c_16.html">MySQL</a>]
+			  <span><a target="_blank" title="{$v9.title}" href="/index.php/{$v9.id}.html">{$v9.title}</a></span>
+					<span class="time"><font color="red">{$v9.time|date='m-d',###}</font></span>
+				</li>
+				</foreach>	
+			<php> 
+			 $id=7;		
+		     $sql10=" SELECT * FROM `hd_blog` WHERE cid =$id ORDER BY click DESC LIMIT 0 , 1";
+	         $blog10=M('blog')->query($sql10);		         
+			</php>
+			 <foreach name="blog10" item='v10'>	
+				<li>[<a target="_blank" href="/index.php/c_7.html">美文转载</a>]
+			  <span><a target="_blank" title="{$v10.title}" href="/index.php/{$v10.id}.html">{$v10.title}</a></span>
+					<span class="time"><font color="red">{$v10.time|date='m-d',###}</font></span>
+				</li>
+			</foreach>	
+			</ul>
+		</div>
+	</div>
+</div>
+
+<div id="hotshow" class="divmargin">
+	<div class="hotshowtab">
+		<h3>热门推荐</h3>
+	</div>
+	<div class="hotshowbox">
+		<ul id="gntq_tab" class="hotshowtab_tab">
+			<li class="current" onclick="tabChange(this,'hotshowcontent')">PHP技术</li>						
+			<li onclick="tabChange(this,'hotshowcontent')">APP开发</li>
+			<li onclick="tabChange(this,'hotshowcontent')">美文转载</li>
+		</ul>
+		<div id="hotshowcontent">
+				<ul>
+				<li><a target="_blank" title="" href=""><img width="150px" height="110px" border="0" alt="" src="/App/Modules/Index/Tpl/Public/Images/uploads/2012/12/notepad.png" /></a>
+					<p><a target="_blank" title="" href="">1Notepad++不用浏览器运行</a></p>
+				</li>
+                <li><a target="_blank" title="" href=""><img width="150px" height="110px" border="0" alt="" src="/App/Modules/Index/Tpl/Public/Images/random/9.jpg" /></a>
+					<p><a target="_blank" title="" href="">PHP初级教程(入门级教程)PDF</a></p>
+				</li>
+				<li><a target="_blank" title="" href=""><img width="150px" height="110px" border="0" alt="" src="/App/Modules/Index/Tpl/Public/Images/random/14.jpg" /></a>
+					<p><a target="_blank" title="" href="">PHP进阶篇之53个要点提高PHP</a></p>
+				</li>
+				<li><a target="_blank" title="" href=""><img width="150px" height="110px" border="0" alt="" src="/App/Modules/Index/Tpl/Public/Images/uploads/2013/04/path.jpg" /></a>
+					<p><a target="_blank" title="" href="">Windows下使用Zend </a></p>
+				</li>
+				</ul>
+				<ul class="hidden">
+                <li><a target="_blank" title="" href=""><img width="150px" height="110px" border="0" alt="" src="/App/Modules/Index/Tpl/Public/Images/uploads/2012/12/notepad.png" /></a>
+					<p><a target="_blank" title="" href="">2Notepad++不用浏览器运行</a></p>
+				</li>
+                <li><a target="_blank" title="" href=""><img width="150px" height="110px" border="0" alt="" src="/App/Modules/Index/Tpl/Public/Images/random/9.jpg" /></a>
+					<p><a target="_blank" title="" href="">PHP初级教程(入门级教程)PDF</a></p>
+				</li>
+				<li><a target="_blank" title="" href=""><img width="150px" height="110px" border="0" alt="" src="/App/Modules/Index/Tpl/Public/Images/random/14.jpg" /></a>
+					<p><a target="_blank" title="" href="">PHP进阶篇之53个要点提高PHP</a></p>
+				</li>
+				<li><a target="_blank" title="" href=""><img width="150px" height="110px" border="0" alt="" src="/App/Modules/Index/Tpl/Public/Images/uploads/2013/04/path.jpg" /></a>
+					<p><a target="_blank" title="" href="">Windows下使用Zend </a></p>
+				</li>
+					</ul>
+				<ul class="hidden">
+				<li><a target="_blank" title="" href=""><img width="150px" height="110px" border="0" alt="" src="/App/Modules/Index/Tpl/Public/Images/uploads/2012/12/notepad.png" /></a>
+					<p><a target="_blank" title="" href="">3Notepad++不用浏览器运行</a></p>
+				</li>
+                <li><a target="_blank" title="" href=""><img width="150px" height="110px" border="0" alt="" src="/App/Modules/Index/Tpl/Public/Images/random/9.jpg" /></a>
+					<p><a target="_blank" title="" href="">PHP初级教程(入门级教程)PDF</a></p>
+				</li>
+				<li><a target="_blank" title="" href=""><img width="150px" height="110px" border="0" alt="" src="/App/Modules/Index/Tpl/Public/Images/random/14.jpg" /></a>
+					<p><a target="_blank" title="" href="">PHP进阶篇之53个要点提高PHP</a></p>
+				</li>
+				<li><a target="_blank" title="" href=""><img width="150px" height="110px" border="0" alt="" src="/App/Modules/Index/Tpl/Public/Images/uploads/2013/04/path.jpg" /></a>
+					<p><a target="_blank" title="" href="">Windows下使用Zend </a></p>
+				</li>
+				</ul>
+		</div>
+	</div>
+</div>
+
+<div id="list_left">
+  <div class="content_box fl">
+				<div class="cat_ico"><a href="/index.php/c_1.html" target="_blank" title="PHP技术"><img alt="PHP技术" width="32px" height="32px" src="/App/Modules/Index/Tpl/Public/Images/caticon/php.gif" /></a></div>
+				<h2><span><a class="more fr" target="_blank" href="/index.php/c_1.html" rel="nofollow"></a></span><em>PHP技术</em></h2>
+		<div class="con_box">
+                {:W('Phppic')}	
+				{:W('Php')}	
+		</div>
+	</div>
+	
+	<div class="content_box fl">
+		<div class="cat_ico"><a href="/index.php/c_3.html" target="_blank" title="数据存储"><img alt="data-storage" width="32px" height="32px" src="/App/Modules/Index/Tpl/Public/Images/caticon/data-storage.gif" /></a></div>
+		<h2><span><a class="more fr" target="_blank" href="/index.php/c_3.html" rel="nofollow"></a></span><em>数据存储</em></h2>
+		<div class="con_box">
+			    {:W('Sjccpic')}	
+				{:W('Sjcc')}	
+	
+		</div>
+	</div>
+	<div class="content_box fl">
+		<div class="cat_ico"><a href="/index.php/c_6.html" target="_blank" title="运营推广"><img alt="operation" width="32px" height="32px" src="/App/Modules/Index/Tpl/Public/Images/caticon/operation.gif" /></a></div>
+		<h2><span><a class="more fr" target="_blank" href="/index.php/c_6.html" rel="nofollow"></a></span><em>运营推广</em></h2>
+		<div class="con_box">
+				{:W('Wytgpic')}	
+				{:W('Wytg')}	
+		</div>
+	</div>
+</div>
+
+<div id="list_right">
+			<div class="content_box fr">
+				<div class="cat_ico">
+				<a href="/index.php/c_2.html" target="_blank" title="前端技术"><img alt="front-skills" width="32px" height="32px" src="/App/Modules/Index/Tpl/Public/Images/caticon/front-skills.gif" /></a>
+		        </div>
+				<h2><span><a class="more fr" target="_blank" href="/index.php/c_2.html" rel="nofollow"></a></span><em>前端技术</em></h2>
+		<div class="con_box">
+			
+			{:W('Qdjspic')}	
+			{:W('Qdjs')}
+		</div>
+	</div>
+			<div class="content_box fr">
+				<div class="cat_ico">
+				<a href="/index.php/c_4.html" target="_blank" title=""><img alt="系统架构" width="32px" height="32px" src="/App/Modules/Index/Tpl/Public/Images/caticon/system-architecture.gif" /></a>
+		       </div>
+				<h2><span><a class="more fr" target="_blank" href="/index.php/c_4.html" rel="nofollow"></a></span><em>系统架构</em></h2>
+		<div class="con_box">
+			{:W('Xtjgpic')}	
+			{:W('Xtjg')}
+
+		</div>
+	</div>
+			<div class="content_box fr">
+				<div class="cat_ico">
+				<a href="/index.php/c_8.html" target="_blank" title="行业快讯"><img alt="it-news" width="32px" height="32px" src="/App/Modules/Index/Tpl/Public/Images/caticon/it-news.gif" /></a>
+		     </div>
+				<h2><span><a class="more fr" target="_blank" href="/index.php/c_8.html" rel="nofollow"></a></span><em>行业快讯</em></h2>
+		<div class="con_box">
+			{:W('Hykxpic')}	
+			{:W('Hykx')}	
+			
+		</div>
+	</div>
+	</div>
+</div>
+
+<!--右侧-->	
+<div id="sidebar" class="fr">
+	<div class="widget">
+		<div class="search divmargin tcpsearch">
+			<form method="#" id="searchform" action="#">
+				<input type="text" onfocus="if (this.value == '请输入关键字进行搜索') {this.value = '';}" onblur="if (this.value == '') {this.value = '请输入关键字进行搜索';}" value="请输入关键字进行搜索" name="s" class="s" />
+				<input class="btn searchsubmit" id="go" alt="搜索" type="button" value="搜索" />
+			</form>
+        </div>
+      
+<div class="widget_box divmargin tcpcategory">
+		<h2 class="title">
+			<strong class="on">推荐栏目</strong>
+		</h2>
+	<div class="category">
+		<ul>
+			<div class="pic"><a href="/index.php/c_1.html" title="PHP技术"><img alt="PHP技术" width="32px" height="32px" src="/App/Modules/Index/Tpl/Public/Images/caticon/php.gif" /></a></div>
+			<span class="stext"><a href="/index.php/c_1.html" rel="bookmark" title="PHP技术">PHP技术</a><span class="category_description"><p>PHP程序开发、源代码下载及相关技术</p></span></span>
+		</ul>	
+		<ul>
+		<div class="pic"><a href="/index.php/c_2.html" title="前端技术"><img alt="前端技术" width="32px" height="32px" src="/App/Modules/Index/Tpl/Public/Images/caticon/front-skills.gif" /></a></div>
+			<span class="stext"><a href="/index.php/c_2.html" rel="bookmark" title="前端技术">前端技术</a><span class="category_description"><p>HTML、CSS、JS、AJAX等网站前端技术</p></span></span>
+		</ul>	
+		<ul>
+			<div class="pic"><a href="/index.php/c_3.html" title="数据存储"><img alt="数据存储" width="32px" height="32px" src="/App/Modules/Index/Tpl/Public/Images/caticon/data-storage.gif" /></a></div>
+			<span class="stext"><a href="/index.php/c_3.html" rel="bookmark" title="数据存储">数据存储</a><span class="category_description"><p>数据存储、数据处理及数据库相关技术</p></span></span>
+		</ul>	
+		<ul style="border-bottom:none;">
+			<div class="pic"><a href="/index.php/c_4.html" title="系统架构"><img alt="系统架构" width="32px" height="32px" src="/App/Modules/Index/Tpl/Public/Images/caticon/system-architecture.gif" /></a></div>
+			<span class="stext"><a href="/index.php/c_4.html" rel="bookmark" title="系统架构">系统架构</a><span class="category_description"><p>操作系统网站服务器网站架构相关技术</p></span></span>
+		</ul>	
+	</div>
+</div>
+
+{:W('New',array('limit' => 8))}
+
+{:W('Hot')}
+
+<div class="widget_box divmargin tcpsiteinfo">
+	<h3 class="title">
+		<strong class="on">新浪微博</strong>
+	</h3>
+	<div class="siteinfo">
+		<iframe width="262" height="380" class="share_self"  frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=&width=273&height=400&fansRow=1&ptype=1&speed=0&skin=2&isTitle=1&noborder=1&isWeibo=1&isFans=0&uid=3205128532&verifier=ebc1a357&dpc=1"></iframe>
+	</div>
+</div>
+		
+</div>
+</div>
+
+</div>
+<!--正文结束-->
+
+<div id="footer">
+ <div id="link" style="margin-bottom:8px;">
+	<h2><span></span>友情链接</h2>
+	<div class="text-links">
+		<ul>
+		 <li><a target="_blank" title="PHP学习博客" href="/"><span>学习PHP技术</span></a></li>
+		
+		 </ul>
+	  </div>
+</div>
+	<div id="footer_menu" class="clean clearfix">
+				<div class="menu">
+					<ul>
+						<li class="page_item page-item-22"><a href="/">关于我们</a></li>
+						<li class="page_item page-item-48"><a href="/">访客留言</a></li>
+						<li class="page_item page-item-141"><a href="/">网友投稿</a></li>
+						<li class="page_item page-item-39"><a href="/">友情链接</a></li>
+						<li class="page_item page-item-513"><a href="/">文章归档</a></li>
+						<li class="page_item page-item-488"><a href="/">全部标签</a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="footer">
+				<div id="declare">
+					本站大部分原创少数素材来源于网络，如有侵权，请及时和我联系，本站将在第一时间删除相关资源！</div>
+				<div id="copyright">
+					Copyright @ 2013-2014  PHP学习技术 版权所有.<script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_4940593'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s9.cnzz.com/stat.php%3Fid%3D4940593' type='text/javascript'%3E%3C/script%3E"));</script></div>
+			</div>
+			<div id="themeversion">
+				Powered By PHP学习技术. Theme by <a href="/" title="时间去哪了">时间去哪了</a>
+						</div>	
+		</div>
+		<div id="loading" style="position:fixed !important;position:absolute;top:0;left:0;height:100%; width:100%; z-index:999; background:#000 url('/App/Modules/Index/Tpl/Public/Images/loading.gif') no-repeat center center; opacity:0.6; filter:alpha(opacity=60);font-size:14px;line-height:20px;" onclick="javascript:turnoff('loading')">
+			<p id="loading-one" style="color:#fff;position:absolute; top:50%; left:50%; margin:20px 0 0 -50px; padding:3px 10px;" onclick="javascript:turnoff('loading')">页面载入中..</p>
+		</div>
+		<script type="text/javascript">
+		  function turnoff(obj){
+			document.getElementById(obj).style.display="none";
+		  }
+		</script>
+		
+
+     <div id="full" style="width:50px; height:95px; position:fixed; left:50%; top:425px; margin-left:520px; z-index:100; text-align:center; cursor:pointer;"><a><img src="/App/Modules/Index/Tpl/Public/Images/back-top.jpg" border=0 alt="返回顶部"></a> </div>
+
+    <script type="text/javascript">var isie6 = window.XMLHttpRequest ? false : true; function newtoponload() { var c = document.getElementById("full"); function b() { var a = document.documentElement.scrollTop || window.pageYOffset || document.body.scrollTop; if (a > 0) { if (isie6) { c.style.display = "none"; clearTimeout(window.show); window.show = setTimeout(function () { var d = document.documentElement.scrollTop || window.pageYOffset || document.body.scrollTop; if (d > 0) { c.style.display = "block"; c.style.top = (400 + d) + "px" } }, 300) } else { c.style.display = "block" } } else { c.style.display = "none" } } if (isie6) { c.style.position = "absolute" } window.onscroll = b; b() } if (window.attachEvent) { window.attachEvent("onload", newtoponload) } else { window.addEventListener("load", newtoponload, false) } document.getElementById("full").onclick = function () { window.scrollTo(0, 0) };</script>
+
+	</body>
+</html>

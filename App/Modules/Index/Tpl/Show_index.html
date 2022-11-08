@@ -1,0 +1,223 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//CN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh-CN">
+<meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+<head>
+<title></title>
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<link rel="stylesheet" href="/App/Modules/Index/Tpl/Public/Css/style.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="/App/Modules/Index/Tpl/Public/Css/highlighter.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="/App/Modules/Index/Tpl/Public/Css/pirobox.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="/App/Modules/Index/Tpl/Public/Css/shortcodes.css" type="text/css" media="screen" />
+<script type="text/javascript" src="/App/Modules/Index/Tpl/Public/Js/jquery.min.js" ></script>
+<script type="text/javascript" src="/App/Modules/Index/Tpl/Public/Js/pirobox.min.js" ></script>
+<script type="text/javascript" src="/App/Modules/Index/Tpl/Public/Js/comments-ajax.js" ></script>
+<script type="text/javascript" src="/App/Modules/Index/Tpl/Public/Js/jquery.lazyload.js" ></script>
+<script type="text/javascript" src="/App/Modules/Index/Tpl/Public/Js/common.js" ></script>
+</head>
+<body>
+
+<div id="header" class="png_bg">
+	
+	<div id="headercontent" style="position:relative;">
+		<div class="content">
+			<div class="right">
+					<div id="topmenu" class="menu-head_menu-container">
+						<ul id="menu-head_menu" class="menu">
+						  <li id="menu-item-756" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-756"><a href="/">关于我们</a></li>
+						  <li id="menu-item-754" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-754"><a href="/">访客留言</a></li>
+						  <li id="menu-item-755" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-755"><a href="/">友情链接</a></li>
+						  <li id="menu-item-764" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-764"><a href="/">网站地图</a></li>
+						  <li id="menu-item-765" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-765"><a href="/">订阅本站</a></li>
+						</ul>
+					</div>
+		    </div>
+			<div class="left">
+				<div id="userlogin"> 	
+					<span id="localtime">
+						<script type="text/javascript">
+						　today=new Date(); var tdate,tday, x,year; var x = new Array("星期日", "星期一", "星期二", "星期三", "星期四", "星期五","星期六");
+						　　var MSIE=navigator.userAgent.indexOf("MSIE");
+						　　if(MSIE != -1){
+						　　 year =(today.getFullYear());}
+						　　else{
+						　　 year = (today.getYear()+1900);}
+						　　tdate="今天是："+year+ "年" + (today.getMonth() + 1 ) + "月" + today.getDate() + "日" + " " + x[today.getDay()];
+						　　document.write(tdate); 
+						</script>
+                    </span> 
+                    <span id="divLogin"></span>&#8260;&nbsp;&nbsp;<a href="# ">注册</a>
+					<div id="smallLay">
+						<div id="smallLay_box">
+						<form action="# " method="post" id="loginform">
+							<div class="loginblock">
+							 <ul>
+								<li class="login"><input type="text" name="log" id="log" size="" tabindex="11" /></li>
+								<li class="password"><input type="password" name="pwd" id="pwd"  size="" tabindex="12" /></li>
+								<li class="lefted"><button value="Submit" id="submit_t" type="submit" tabindex="13">登录</button></li>
+							 </ul>
+								<input type="hidden" name="redirect_to" value="/" />
+								<p class="autologin" style="margin:0;"><input type="checkbox" name="rememberme" id="modlogn_remember" value="yes"  checked="checked" alt="Remember Me" />下次自动登录</p>
+							</div>
+						</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<div id="header_inner">
+		<div class="banner clearfix">
+			<div class="logo">
+				<h1><a href="/" class="png_bg" title=""><span class="hidden">PHP学习技术</span></a></h1>
+			</div>
+		</div>
+	</div>
+	
+<php>
+	$cate=M('cate')->order('sort')->select();
+	import('Class.Category',APP_PATH);
+	$cate=Category::unlimitedForLayer($cate);
+	
+	</php>
+	<div id="header_menu" class="clearfix">
+		<div id="navmenu" class="menu-menu-container">
+		<ul id="menu-menu" class="menu">
+		<li id="menu-item-728" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home "><a href="/">网站首页</a></li>
+		<foreach name="cate" item="v">
+        <li id="menu-item-206" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-206"><a href="/index.php/c_{$v.id}.html">{$v.name}</a>
+			<if condition='$v["child"]'>
+			<ul class="sub-menu">
+		<foreach name="v.child" item="value">
+		<li id="menu-item-771" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-771"><a href="/index.php/c_{$value.id}.html">{$value.name}</a></li>
+				</foreach>
+				</ul>
+				</if>
+        </li>
+            </foreach>
+		</ul>
+       </div>
+	   <div class="clearfix"></div>
+	</div>
+</div>
+
+<!--正文-->
+<div id="wrapper" class="clearfix">
+	  <div id="navigation">
+		 <div class="navigation">
+		   <strong><a title="返回首页" href="/">home</a></strong>
+		   	<foreach name='parent' item='v'>
+					<a href="{:U('/c_' . $v['id'])}">{$v.name}</a>
+				</foreach>		  
+		 </div>																													
+	 </div>		
+ <div id="sidebar" class="fr">
+		
+   <div class="widget">
+	<div class="search divmargin tcpsearch">
+	<form method="#" id="searchform" action="#">
+		<input type="text" onfocus="if (this.value == '请输入关键字进行搜索') {this.value = '';}" onblur="if (this.value == '') {this.value = '请输入关键字进行搜索';}" value="请输入关键字进行搜索" name="s" class="s" />
+		<input class="btn searchsubmit" id="go" alt="搜索" type="button" value="搜索" />
+	</form>
+    </div>
+	
+
+{:W('New',array('limit' => 8))}
+{:W('Hot')}
+
+<div class="widget_box divmargin tcpcategory">
+	<h2 class="title">
+		<strong class="on">推荐栏目</strong>
+	</h2>
+	<div class="category">
+		<ul>
+			<div class="pic"><a href="/index.php/c_1.html" title="PHP技术"><img alt="PHP技术" width="32px" height="32px" src="/App/Modules/Index/Tpl/Public/Images/caticon/php.gif" /></a></div>
+			<span class="stext"><a href="/index.php/c_1.html" rel="bookmark" title="PHP技术">PHP技术</a><span class="category_description"><p>PHP程序开发、源代码下载及相关技术</p></span></span>
+		</ul>	
+		<ul>
+		<div class="pic"><a href="/index.php/c_2.html" title="前端技术"><img alt="前端技术" width="32px" height="32px" src="/App/Modules/Index/Tpl/Public/Images/caticon/front-skills.gif" /></a></div>
+			<span class="stext"><a href="/index.php/c_2.html" rel="bookmark" title="前端技术">前端技术</a><span class="category_description"><p>HTML、CSS、JS、AJAX等网站前端技术</p></span></span>
+		</ul>	
+		<ul>
+			<div class="pic"><a href="/index.php/c_3.html" title="数据存储"><img alt="数据存储" width="32px" height="32px" src="/App/Modules/Index/Tpl/Public/Images/caticon/data-storage.gif" /></a></div>
+			<span class="stext"><a href="/index.php/c_3.html" rel="bookmark" title="数据存储">数据存储</a><span class="category_description"><p>数据存储、数据处理及数据库相关技术</p></span></span>
+		</ul>	
+		<ul style="border-bottom:none;">
+			<div class="pic"><a href="/index.php/c_4.html" title="系统架构"><img alt="系统架构" width="32px" height="32px" src="/App/Modules/Index/Tpl/Public/Images/caticon/system-architecture.gif" /></a></div>
+			<span class="stext"><a href="/index.php/c_4.html" rel="bookmark" title="系统架构">系统架构</a><span class="category_description"><p>操作系统网站服务器网站架构相关技术</p></span></span>
+		</ul>	
+	</div>
+</div>	
+</div>
+</div>
+
+		<div id="content" class="fl" style="border-right:solid 1px #CCC;">
+		<div id="article_content">
+		<div class="article_title_box_sim">{$blog.title}</div>
+		<div class="article_title_info_sim">
+			<p class="article_title_info_sim_basic">
+				<span>日期：{$blog.time|date='Y-m-d', ###}</span>
+				<label></label>
+				<span>作者：<span style="color:red;"><a href="/" title="92php.net" rel="author">92php.net</a></span></span>
+				<label></label>
+				<span>阅读：<script type="text/javascript" src='{:U(GROUP_NAME."/Show/clickNum",array("id"=>$blog["id"]))}'></script></span>
+				<label></label>
+				
+			</p>
+			<p class="article_title_info_sim_tag">
+				标签：<span class="content_tag" style="font-family:微软雅黑,宋体,Courier New;">
+						<a href="/" rel="tag">PHP技术学习</a></span>
+			</p>
+		</div>
+		<div class="article_content_sim">
+				{$blog.content}	
+					
+         <div class="article_copyright">
+		 
+		<div class="bshare-custom icon-medium-plus"><div class="bsPromo bsPromo2"></div><a title="分享到" href="http://www.bShare.cn/" id="bshare-shareto" class="bshare-more">分享到</a><a title="分享到QQ空间" class="bshare-qzone"></a><a title="分享到新浪微博" class="bshare-sinaminiblog"></a><a title="分享到腾讯微博" class="bshare-qqmb"></a><a title="分享到微信" class="bshare-weixin" href="javascript:void(0);"></a><a title="更多平台" class="bshare-more bshare-more-icon more-style-addthis"></a><span class="BSHARE_COUNT bshare-share-count" style="float: none; ">26.5K</span></div><script type="text/javascript" charset="utf-8" src="http://static.bshare.cn/b/buttonLite.js#style=-1&amp;uuid=24e37acd-022d-44a0-bf85-4279ec3b6534&amp;pophcol=2&amp;lang=zh"></script><script type="text/javascript" charset="utf-8" src="http://static.bshare.cn/b/bshareC0.js"></script>
+
+ 
+			  </div>
+				<div style="clear:both;"></div>
+
+		 <div class="article_link"></div>
+				
+		</div>
+	</div>
+	
+<div style="width:700px;">		
+<div id=uyan_frame></div>
+</div>
+</div>
+
+</div>
+
+<!--foot-->
+		<div id="footer">
+			<div id="footer_menu" class="clean clearfix">
+				<div class="menu"><ul><li class="page_item page-item-22"><a href="/">关于我们</a></li><li class="page_item page-item-48"><a href="/">访客留言</a></li><li class="page_item page-item-141"><a href="/">网友投稿</a></li><li class="page_item page-item-39"><a href="/">友情链接</a></li><li class="page_item page-item-513"><a href="/">文章归档</a></li><li class="page_item page-item-488"><a href="/">全部标签</a></li></ul></div>
+			</div>
+			<div class="footer">
+				<div id="declare">
+					本站大部分原创少数素材来源于网络，如有侵权，请及时和我联系，本站将在第一时间删除相关资源！</div>
+				<div id="copyright">Copyright @ 2013-2014  PHP学习技术 版权所有.<script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_4940593'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s9.cnzz.com/stat.php%3Fid%3D4940593' type='text/javascript'%3E%3C/script%3E"));</script></div>
+			</div>
+			<div id="themeversion">
+				Powered By PHP学习技术. Theme by <a href="/" title="时间去哪了">时间去哪了</a>
+			</div>	
+		</div>
+		<div id="loading" style="position:fixed !important;position:absolute;top:0;left:0;height:100%; width:100%; z-index:999; background:#000 url('/App/Modules/Index/Tpl/Public/Images/loading.gif') no-repeat center center; opacity:0.6; filter:alpha(opacity=60);font-size:14px;line-height:20px;" onclick="javascript:turnoff('loading')">
+			<p id="loading-one" style="color:#fff;position:absolute; top:50%; left:50%; margin:20px 0 0 -50px; padding:3px 10px;" onclick="javascript:turnoff('loading')">页面载入中..</p>
+		</div>
+		<script type="text/javascript">
+		  function turnoff(obj){
+			document.getElementById(obj).style.display="none";
+		  }
+		</script>
+		
+ <div id="full" style="width:50px; height:95px; position:fixed; left:50%; top:425px; margin-left:520px; z-index:100; text-align:center; cursor:pointer;"><a><img src="/App/Modules/Index/Tpl/Public/Images/back-top.jpg" border=0 alt="返回顶部"></a> </div>
+
+    <script type="text/javascript">var isie6 = window.XMLHttpRequest ? false : true; function newtoponload() { var c = document.getElementById("full"); function b() { var a = document.documentElement.scrollTop || window.pageYOffset || document.body.scrollTop; if (a > 0) { if (isie6) { c.style.display = "none"; clearTimeout(window.show); window.show = setTimeout(function () { var d = document.documentElement.scrollTop || window.pageYOffset || document.body.scrollTop; if (d > 0) { c.style.display = "block"; c.style.top = (400 + d) + "px" } }, 300) } else { c.style.display = "block" } } else { c.style.display = "none" } } if (isie6) { c.style.position = "absolute" } window.onscroll = b; b() } if (window.attachEvent) { window.attachEvent("onload", newtoponload) } else { window.addEventListener("load", newtoponload, false) } document.getElementById("full").onclick = function () { window.scrollTo(0, 0) };</script>
+	</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>92php.net</title>
+<link href="/Public/Css/style.css" rel="stylesheet" type="text/css" />
+<link href="/Public/Css/public.css" rel="stylesheet" type="text/css" />
+</head>
+
+
+<body>
+<div class="location">
+      <span>当前位置:分类管理&nbsp;>&nbsp;分类列表</span>
+ </div>
+<div class="main">
+ 
+<div class="table-list">
+	<form action="{:U(GROUP_NAME.'/Category/sortCate')}" method="post">
+   <table class="table"> 
+     <tr>
+        <th>ID</th>
+        <th>名称</th>
+        <th>级别</th>
+        <th>排序</th>
+        <th>操作</th>
+     </tr>
+     <foreach name="cate" item='v'>
+        <tr>
+            <td>{$v.id}</td>
+            <td>{$v.html}{$v.name}</td>
+            <td>{$v.level}</td>
+            <td>
+                <input type="text" name="{$v.id}" value="{$v.sort}" />
+            </td>
+            <td>
+			  [<a href="{:U(GROUP_NAME . '/Category/addCate', array('pid' => $v['id']))}">添加子分类</a>]
+			  [<a href="{:U(GROUP_NAME . '/Category/addCate', array('id' => $v['id']))}">修改</a>]
+			  [<a href="{:U(GROUP_NAME . '/Category/del', array('id' => $v['id']))}">删除</a>]
+
+            </td>
+        </tr>
+         </foreach>
+         <tr>
+            <td colspan="5" align="'center">
+                <input type="submit" value="排序" />
+         </tr>
+   </table>
+</form>
+	
+</div>
+<div id="pages">    </div>
+</div>
+</body>
+</html>
